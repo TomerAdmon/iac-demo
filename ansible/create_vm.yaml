@@ -8,9 +8,6 @@
   tasks:
       - name: create folder
         vcenter_folder:
-          hostname: "{{ vcenter_hostname }}"
-          username: "{{ vcenter_username }}"
-          password: "{{ vcenter_password }}"
           validate_certs: "{{ vcenter_validate_certs }}"
           datacenter_name: "{{ vcenter_datacenter }}"
           folder_name: "{{ vcenter_destination_folder }}"
@@ -18,9 +15,6 @@
           state: present
       - name: create VM
         vmware_guest:
-          hostname: "{{ vcenter_hostname }}"
-          username: "{{ vcenter_username }}"
-          password: "{{ vcenter_password }}"
           validate_certs: "{{ vcenter_validate_certs }}"
           datacenter: "{{ vcenter_datacenter }}"
           name: "{{ vm_name }}"
